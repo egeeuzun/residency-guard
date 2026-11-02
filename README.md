@@ -25,7 +25,7 @@ raporu yazar.
 
 Durumlar: ❌ kişisel veri Local Zone dışında; ⚠️ belirsiz ya da elle bakılmalı;
 ✅ uygun. Yalnızca `eu-central-1-ist-1a` "Türkiye'de" sayılır. Kural numaraları
-sabittir; Faz 5'teki düzeltmeler `fix(RG-00X): …` olarak bunlara atıf yapar.
+sabittir; bir bulguyu düzelten değişiklik `fix(RG-00X): …` diye ona atıf yapabilir.
 
 Log taramasında eşleşen değerler rapora yazılmaz, yalnızca sayılır. Hesap
 numarası raporda `<hesap>` olarak maskelenir (`--show-account` ile açılır).
@@ -70,14 +70,14 @@ cd ../../../residency-guard
 # 4. Pencereyi kapat: residency_capture_enabled = false, db_snapshot_time_utc'yi sil, terraform apply
 ```
 
-Çıkış kodu: `0` temiz, `1` bir kontrol çalışamadı, `2` en az bir ❌. Faz 8'deki
-haftalık iş bunu kullanır.
+Çıkış kodu: `0` temiz, `1` bir kontrol çalışamadı, `2` en az bir ❌. CI'da ya da
+zamanlanmış bir işte denetimi düşürmek için bu kullanılabilir.
 
 Sık kullanılan seçenekler:
 
 | Seçenek | Ne yapar |
 | --- | --- |
-| `--label sonra` | Faz 5'ten sonraki rapor: `reports/<tarih>-sonra.md` |
+| `--label sonra` | Raporun etiketi; düzeltmelerden sonraki çalıştırma için: `reports/<tarih>-sonra.md` |
 | `--regions eu-central-1,us-east-1` | Envanteri bu bölgelerle sınırla (varsayılan: hesapta açık tüm bölgeler) |
 | `--window-hours 6` | Akış ve DNS sorgularının penceresi |
 | `--skip dns,network` | Kontrol atla: `inventory, copies, backup, logs, compute, network, audit, dns` |

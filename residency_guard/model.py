@@ -1,6 +1,6 @@
 """Bulgu modeli ve kural listesi.
 
-Kural kimlikleri sabittir: Faz 5'teki commit'ler (fix(RG-00X): ...) ve
+Kural kimlikleri sabittir: duzeltme commit'leri (fix(RG-00X): ...) ve
 onceki/sonraki raporlar bunlara atif yapar. Yeni kontrol yeni numara alir.
 """
 
